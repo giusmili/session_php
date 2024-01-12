@@ -180,6 +180,9 @@ section .form input{
 section .form input:focus{
     outline: 0;
 }
+.mark_id{
+    color: #fff;
+}
 .content-secondary h2{
     color: var(--colors-theme-c);
 }

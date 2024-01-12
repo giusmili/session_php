@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Session</title>
-    <link rel="stylesheet" href="./css/main.css">
-</head>
+<?php
+    // start session
+    session_start();
+?>
+<?php
+    include_once "./src/header.inc.php";
+?>
 
 <body>
     <header>
         <h1>
-            Simple Session        </h1>
+        <?= $_new_user->_title ?>
+        </h1>
     </header>
     <main>
         <figure>
@@ -25,13 +24,28 @@
                 Testons la session
             </h2>
                 <p>
-                    Variables session activées. 
-                    <br>Bonjour ?<br> 
-                    dernière connexion le : ?<br> 
-                    valeur de la session : ?
+                    <!-- Variables session activées.  -->
+                <?php
+                    $_SESSION["first_name"] = "Ledorf";
+                    $_SESSION["last_name"] = "Rasmus";
+                    $_SESSION["heure"] = date("d/m/Y");
+                    print "<br>Bonjour ".$_SESSION["last_name"]."<br>" ;
+                    print "dernière connexion le : ".$_SESSION["heure"]."<br> 
+                    valeur de la session : ".$_COOKIE['PHPSESSID'];
+                ?>
                 </p>
              
         </section>
     </main>
+        <?php
+            session_unset();
+            session_destroy();
+        ?>
     </body>
+    <script>
+        const first_name = "Tom";
+        //sessionStorage
+        let user = localStorage.setItem("User", first_name)
+        JSON.parse(user)
+    </script>
 </html>
