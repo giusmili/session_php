@@ -1,7 +1,9 @@
 <?php
+    # démarrage de la session
     session_start();
     $_id_session = session_id();
 ?>
+
 <?php
     include_once "./src/header.inc.php";
 ?>
@@ -36,21 +38,11 @@
         </fieldset>
     </section>
     <?php
-     $_id_session ? print "<em class=\"mark_id\">ID de session récupérer via session_id()<br>" .$_id_session. "<br></em>" : false;
-    //connexion user
-    if(isset($_POST['login']) && isset($_COOKIE['PHPSESSID'])){
-        $_login = $_POST['login'];
-        if(!$_login){
-            print "<section><p>Remplir les champs</p></section>";
-        }
-        else{
-            $_SESSION["nom"] = $_login;
-            print "<section><p class=\"button-success-color\">Bonjour : ".$_SESSION["nom"]."</p></section>";
-            print "<section><p><a href=\"session_user.php\" class=\"button-success button-success-color\">Vos infos</a></p></section>";
-            // afficher la section récupérée
-            echo '<section><p class="mark_id">ID de session récuperé via $_COOKIE : <br>'.$_COOKIE["PHPSESSID"].'</p></section>';
-        }
-    }
+    
+    $_id_session ? print "<em class=\"mark_id\">ID de session récupérer via session_id()<br>" .$_id_session. "<br></em>" : false;
+    
+    require_once __DIR__ . "/src/controllerLogin.inc.php";
+       Login::connect();
 
     ?>
     </main>

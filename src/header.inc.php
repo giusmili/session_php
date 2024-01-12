@@ -1,5 +1,5 @@
 <?php
-    //lang, title, css
+    # lang, title, css
     class User{
         public $_css = "./css/main.css";
         static $_lang = ["fr","en","it"];
