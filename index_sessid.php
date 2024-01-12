@@ -5,7 +5,7 @@
 ?>
 
 <?php
-    include_once "./src/header.inc.php";
+    include_once __DIR__."/src/header.inc.php";
 ?>
 <body>
 <header>
@@ -42,7 +42,8 @@
     $_id_session ? print "<em class=\"mark_id\">ID de session récupérer via session_id()<br>" .$_id_session. "<br></em>" : false;
     
     require_once __DIR__ . "/src/controllerLogin.inc.php";
-       Login::connect();
+    # appel de la class Login
+    Login::connect();
 
     ?>
     </main>
