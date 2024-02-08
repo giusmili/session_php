@@ -39,7 +39,9 @@
     </section>
     <?php
     
-    $_id_session ? print "<em class=\"mark_id\">ID de session récupérer via session_id()<br>" .$_id_session. "<br></em>" : false;
+    $_id_session ? 
+    print "<em class=\"mark_id\">ID de session récupérer via session_id()<br>" .$_id_session. "<br></em>" : 
+    false;
     
     require_once __DIR__ . "/src/controllerLogin.inc.php";
     # appel de la class Login
