@@ -27,6 +27,8 @@
                    echo "Hello vous êtes : ".$_SESSION["nom"]." nous somme le "
                    .date("d/m/Y")."<br>".$_COOKIE['PHPSESSID'];
                 ?>
+                <br>
+                <a href="#">Voir le dépôt</a>
                 </p>
              
         </section>
